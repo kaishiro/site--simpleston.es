@@ -1,0 +1,443 @@
+@import "reset";
+@import "global";
+@import "grid";
+
+.logo {
+  margin-top:10px;
+  margin-bottom:10px;
+  .logo__header {
+  }
+  .logo__link {
+    display:block;
+    color:$text-color;
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size:5em;
+    line-height:1em;
+    text-align:center;
+  }
+  .logo__hilite {
+    color:$hilite-color;
+  }
+}
+
+.nav--primary {
+  margin-bottom:10px;
+  .nav__list {
+  }
+  .nav__item {
+    float:left;
+    width:25%;
+  }
+  .nav__link {
+    display:block;
+    padding:5px 0;
+    font-size:1.2em;
+    text-align:center;
+    text-transform:uppercase;
+    &:hover {
+      color:$link-color;
+    }
+  }
+}
+
+.nav--utility {
+  margin-bottom:25px;
+  .nav__link {
+    @include button;
+  }
+  .nav__link--disabled {
+    @include button-disabled;
+  }
+  .nav__copy--truncated {
+    display:none;
+  }
+}
+
+.product {
+  padding-top:25px;
+  padding-bottom:25px;
+  border-top:1px solid #EEE;
+  .product__link {
+    position:relative;
+    float:left;
+    margin-bottom:10px;
+    width:100%;
+  }
+  .product__image {
+    width:100%;
+    float:left;
+    @include border-radius(5px); 
+  }
+  .product__overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    display:none;
+  }
+  .product__bg {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background:$white;
+    @include opacity(.6);
+    @include border-radius(5px);
+  }
+  .product__title {
+    font-size:1.8em;
+    line-height:1em;
+    padding:10% 10% 10px;
+    position:relative;
+    color:darken($text-color, 20%);
+  }
+  .product__description {
+    font-size:1.2em;
+    line-height:1.2em;
+    padding:0 10%;
+    position:relative;
+    color:darken($text-color, 20%);
+  }
+  .product__variants {
+    display:none;
+  }
+  .product__qty {
+    display:none;
+  }
+  .product__price {
+    float:left;
+    width:25%;
+    font-size:2.5em;
+    line-height:40px;
+  }
+  .product__addtocart {
+    @include button;
+    float:left;
+    width:75%;
+  }
+  .product__addtocart--disabled {
+    @include button-disabled;
+  }
+}
+
+.share {
+  position:absolute;
+  bottom:10%;
+  width:100%;
+  .share__item {
+    float:left;
+    width:33%;
+  }
+  .share__link {
+    display:block;
+    text-align:center;
+    color:$link-color;
+    font-size:2em;
+    line-height:1em;
+  }
+  .share__copy {
+    display:none;
+  }
+}
+
+.footer {
+  margin-top:2em;
+  margin-bottom:2em;
+  text-align:center;
+}
+
+.page {
+  .page__heading {
+    font-family:'Bilbo Swash Caps';
+    font-size:3em;
+    line-height:1em;
+    margin-bottom:10px;
+  }
+  .page__content {
+    font-size:1.25em;
+    line-height:1.4em;
+  }
+}
+
+.signature {
+  font-family:'Bilbo Swash Caps';
+  font-size:1.5em;
+}
+
+.form {
+  .form__title {
+    font-family:'Bilbo Swash Caps';
+    font-size:2em;
+    display:block;
+    line-height:1em;
+  }
+  .form__label {
+    float:left;
+    margin:1em 0 .25em;
+  }
+  .form__input {
+    width:100%;
+    height:3em;
+    line-height:3em;
+    color:darken($hilite-color, 20%);
+    border:1px solid $border-color;
+    @include border-radius(5px);
+    padding:5px 10px;
+    font-size:1em;
+  }
+  .form__textarea {
+    width:100%;
+    height:10em;
+    line-height:1.4em;
+    color:darken($hilite-color, 20%);
+    border:1px solid $border-color;
+    @include border-radius(5px);
+    padding:10px;
+    font-size:1em;
+  }
+  .form__alert {
+    color:$hilite-color;
+    float:left;
+    font-size:12px;
+    margin:1em 0 .25em;
+  }
+  .form__submit {
+    @include button();
+    float:left;
+    margin-top:1em;
+    width:100%;
+  } 
+}
+.errorForm, .successForm {
+  @include border-radius(5px);
+  border:1px solid $hilite-color;
+  margin:1em 0;
+  padding:.25em .5em;
+  color:$hilite-color;
+  p {
+    padding:.25em 0;
+    color:$hilite-color;
+  }
+}
+
+.article {
+  margin-bottom:2em;
+  padding-bottom:2em;
+  border-bottom:1px solid lighten($border-color, 20%);
+  .article__title {
+    font-family:'Bilbo Swash Caps';
+    font-size:2em;
+    line-height:1em;
+    margin-bottom:5px;
+  }
+  .article__info {
+    font-size:12px;
+    margin-bottom:10px;
+    color:$hilite-color;
+  }
+  .article__content {
+    img {
+      width:100%;
+      margin:10px 0;
+    }
+  }
+}
+
+.sidebar {
+  display:none;
+}
+
+.comment_form {
+  margin-top:1em;
+  float:left;
+}
+
+.comments {
+  .comments__title {
+    font-family:'Bilbo Swash Caps';
+    font-size:2em;
+    line-height:1em;
+  }
+}
+
+.comment {
+  margin:.5em 0 1em;
+  .comment__author {
+    font-weight:bold;
+    font-size:12px;
+  }
+  .comment__timestamp {
+    font-size:12px
+  }
+  .comment__content {
+    color:$hilite-color;
+  }
+}
+
+.cart {
+  margin-top:1em;
+  .cart__item {
+    margin-bottom:1em;
+    padding-bottom:1em;
+    border-bottom:1px solid lighten($border-color, 20%);
+    float:left;
+    width:100%;
+    position:relative;
+  }
+  .cart__image {
+    float:left;
+    @include border-radius(5px);
+    width:75px;
+  }
+  .cart__title {
+    position:absolute;
+    top:0;
+    left:85px;
+  }
+  .cart__price {
+    position:absolute;
+    bottom:15px;
+    left:85px;
+    font-size:1.2em;
+  }
+  .cart__remove {
+    position:absolute;
+    bottom:15px;
+    right:0;
+    color:$hilite-color;
+    font-size:12px;
+  }
+  .cart__qty {
+    display:none;
+  }
+  .cart__total {
+    font-size:2em;
+    color:$hilite-color;
+    line-height:1em;
+    margin:1em 0;
+    float:left;
+    width:100%;
+    text-align:right;
+  }
+  #checkout {
+    @include button();
+    float:left;
+    width:100%;
+  }
+  #update-cart {
+    display:none;
+  }
+  .extra-checkout-buttons {
+    float:left;
+    width:100%;
+    text-align:center;
+    margin-top:2em;
+  }
+}
+
+@media screen and (min-width: $width-tablet) {
+.logo {
+  margin-top:0;
+  margin-bottom:0;
+  .logo__link {
+    text-align:left;
+    height:100px;
+    line-height:100px;
+  }
+}
+
+.nav--primary {
+  margin-bottom:0;
+  .nav__item {
+    width:auto;
+    margin-right:10%;
+  }
+  .nav__link {
+    padding:0;
+    height:100px;
+    line-height:100px;
+    font-size:1.4em;
+    text-align:left;
+  }
+}
+
+.nav--utility {
+  margin-bottom:0;
+  .nav__list {
+    display:table;
+    height:100px;
+    width:100%;
+  }
+  .nav__item--cart {
+    display:table-cell;
+    vertical-align:middle;
+  }
+  .nav__copy {
+    display:none;
+  }
+  .nav__copy--truncated {
+    display:inline;
+  }
+}
+
+.product {
+  padding-top:0;
+  padding-bottom:0;
+  border-top:none;
+}
+
+.product--right {
+  padding-top:25px;
+}
+
+.form {
+  .form__submit {
+  }
+}
+
+.sidebar {
+  display:block;
+  position:fixed;
+  top:100px;
+  right:2.5%;
+  width:200px;
+  .sidebar__heading {
+    font-family:'Bilbo Swash Caps';
+    font-size:2em;
+    line-height:1em;
+  }
+  .sidebar__article {
+    margin:10px 0;
+  }
+  .sidebar__link {
+    color:$hilite-color;
+    display:block;
+  }
+  .sidebar__timestamp {
+    display:block;
+    font-size:12px;
+  }
+}
+
+}
+
+@media screen and (min-width: $width-desktop) {
+
+  .product {
+    margin:2em 0;
+  }
+  .product--right {
+    padding-top:0;
+  }
+  .product__price {
+    text-align:center;
+  }
+
+  .sidebar {
+    left:50%;
+    margin-left:275px;
+  }
+
+}

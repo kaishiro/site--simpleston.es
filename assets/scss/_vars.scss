@@ -1,0 +1,78 @@
+/**
+* Variables Partial
+*
+* Standard variables partial for base inclusion. 
+* 
+* This partial contains standard variable declarations for SASS, Compass, and 
+* Zen Grids. All variables are to be maintained here unless contextually 
+* inappropriate.
+* 
+* @project        newenglandteaco.com
+* @author         Matthew White <mwhite@digitalbungalow.com>
+* @date           2013-05-25
+* @lastmodified   2013-05-25 17:07
+* @todo           Change $box-sizing-polyfill-path to an absolute server-side
+*                 path on production
+*/
+
+/**
+* Compass Variables
+*/
+$base-font-size: 12px;
+$base-line-height: 16px;
+
+/**
+* Zen Grids Variables
+*/
+$box-sizing-polyfill-path: "https://raw.github.com/Schepp/box-sizing-polyfill/master/boxsizing.htc";
+$zen-column-count: 1;
+$zen-gutter-width: 20px;
+
+/**
+* Responsive Variables
+*/
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-desktop: 1024px;
+
+/**
+* Color Variables (Descriptive)
+*
+* Lower values indicate lighter shades.  Higher values indicate darker shades.
+*/
+@import 'colors';
+
+/**
+* Color Variables (Functional)
+*/
+$background-color:$whiteFloral;
+$link-color:$purpleOrchid;
+$hilite-color:$purpleOrchid;
+$text-color:$grayBattleship;
+$button-color:$purpleOrchid;
+$border-color:$grayBattleship;
+
+//Mixins
+@mixin button {
+  display:block;
+  background:$button-color;
+  text-shadow: lighten($button-color, 10%) 0 -1px 0;
+  @include border-radius(5px);
+  font-size:1.2em;
+  text-transform:capitalize;
+  text-align:center;
+  color:$white;
+  padding:0;
+  border:none;
+  font-family:'Titillium Web';
+  height:40px;
+  line-height:40px;
+  cursor:pointer;
+}
+
+
+@mixin button-disabled {
+  @include button;
+  @include opacity(.5);
+  cursor:default;
+}

@@ -1,0 +1,170 @@
+{% for product in collections.frontpage-left.products limit:1 %}
+    
+  <!-- Block: Product -->
+  <div class="product product--left">
+    <a class="product__link" href="#">
+      <img class="product__image" src="{{ product.featured_image | product_img_url: 'large'}}" />
+    </a>
+    <div class="product__title">{{product.title}}</div>
+    <div class="product__description">{{product.description}}</div>
+    <div class="product__price">{{product.price_min | money}}</div>
+      
+    {% if product.available %}
+      
+      <form class="product__form" action="/cart/add" method="post">
+        <select class="product__variants" id="product-select" name='id'>
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+        <input class="product__qty" min="1" type="number" id="quantity" name="quantity" value="1" />
+        <input class="product__submit" type="submit" value="Add to cart" id="addtocart" />
+      </form>
+
+    {% else %}
+      
+      <span class="product__unavailable">Sorry, the product is not available<span>
+    
+    {% endif %}
+
+    <!-- Block: Share -->
+    <ul class="share">
+      <li class="share__item product-share__item--facebook">
+      <a class="share__link" href="facebook.com">
+        <span class="share__icon icon-facebook"></span>
+        <span class="share__copy">Share It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--twitter">
+      <a class="share__link" href="twitter.com">
+        <span class="share__icon icon-twitter"></span>
+        <span class="share__copy">Tweet It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--pinterest">
+      <a class="share__link" href="pinterest.com">
+        <span class="share__icon icon-pinterest"></span>
+        <span class="share__copy">Pin It</span>
+      </a>
+      </li>
+    </ul>
+    <!-- Block: Share -->
+
+  </div>
+  <!-- Block: Product -->
+
+{% endfor %}
+
+{% for product in collections.frontpage-middle.products limit:1 %}
+    
+  <!-- Block: Product -->
+  <div class="product product--middle">
+    <a class="product__link" href="#">
+      <img class="product__image" src="{{ product.featured_image | product_img_url: 'large'}}" />
+    </a>
+    <div class="product__title">{{product.title}}</div>
+    <div class="product__description">{{product.description}}</div>
+    <div class="product__price">{{product.price_min | money}}</div>
+      
+    {% if product.available %}
+      
+      <form class="product__form" action="/cart/add" method="post">
+        <select class="product__variants" id="product-select" name='id'>
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+        <input class="product__qty" min="1" type="number" id="quantity" name="quantity" value="1" />
+        <input class="product__submit" type="submit" value="Add to cart" id="addtocart" />
+      </form>
+
+    {% else %}
+      
+      <span class="product__unavailable">Sorry, the product is not available<span>
+    
+    {% endif %}
+
+    <!-- Block: Share -->
+    <ul class="share">
+      <li class="share__item product-share__item--facebook">
+      <a class="share__link" href="facebook.com">
+        <span class="share__icon icon-facebook"></span>
+        <span class="share__copy">Share It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--twitter">
+      <a class="share__link" href="twitter.com">
+        <span class="share__icon icon-twitter"></span>
+        <span class="share__copy">Tweet It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--pinterest">
+      <a class="share__link" href="pinterest.com">
+        <span class="share__icon icon-pinterest"></span>
+        <span class="share__copy">Pin It</span>
+      </a>
+      </li>
+    </ul>
+    <!-- Block: Share -->
+
+  </div>
+  <!-- Block: Product -->
+
+{% endfor %}
+
+{% for product in collections.frontpage-right.products limit:1 %}
+    
+  <!-- Block: Product -->
+  <div class="product product--right">
+    <a class="product__link" href="#">
+      <img class="product__image" src="{{ product.featured_image | product_img_url: 'large'}}" />
+    </a>
+    <div class="product__title">{{product.title}}</div>
+    <div class="product__description">{{product.description}}</div>
+    <div class="product__price">{{product.price_min | money}}</div>
+      
+    {% if product.available %}
+      
+      <form class="product__form" action="/cart/add" method="post">
+        <select class="product__variants" id="product-select" name='id'>
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+          {% endfor %}
+        </select>
+        <input class="product__qty" min="1" type="number" id="quantity" name="quantity" value="1" />
+        <input class="product__submit" type="submit" value="Add to cart" id="addtocart" />
+      </form>
+
+    {% else %}
+      
+      <span class="product__unavailable">Sorry, the product is not available<span>
+    
+    {% endif %}
+
+    <!-- Block: Share -->
+    <ul class="share">
+      <li class="share__item product-share__item--facebook">
+      <a class="share__link" href="facebook.com">
+        <span class="share__icon icon-facebook"></span>
+        <span class="share__copy">Share It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--twitter">
+      <a class="share__link" href="twitter.com">
+        <span class="share__icon icon-twitter"></span>
+        <span class="share__copy">Tweet It</span>
+      </a>
+      </li>
+      <li class="share__item product-share__item--pinterest">
+      <a class="share__link" href="pinterest.com">
+        <span class="share__icon icon-pinterest"></span>
+        <span class="share__copy">Pin It</span>
+      </a>
+      </li>
+    </ul>
+    <!-- Block: Share -->
+
+  </div>
+  <!-- Block: Product -->
+
+{% endfor %}

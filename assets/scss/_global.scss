@@ -1,0 +1,56 @@
+/**
+* Global Stylesheet
+*
+* Maintains all site-wide styles 
+* 
+* This stylesheet contains sane global defaults (border-box, forced
+* vertical scrollbars, etc.), as well as any block agnostic site-wide styling.
+* 
+* @project        newenglandteaco.com
+* @author         Matthew White <mwhite@digitalbungalow.com>
+* @date           2013-05-25
+* @lastmodified   2013-05-25 17:10
+*/
+
+/**
+* Base Partial Import
+*/
+@import 'base';
+
+/**
+* Border-Box Layout Model
+*
+* @see http://paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+* {
+  @include box-sizing(border-box);
+}
+
+/**
+* Force Vertical Scrollbar
+*
+* @see  http://stackoverflow.com/questions/1800670/moz-scrollbars-vertical-equivalent-for-chrome-opera-safari 
+*/
+html {
+  overflow: -moz-scrollbars-vertical;
+  -ms-overflow-y: scroll;
+  overflow-y: scroll;
+}
+
+/**
+* Typography
+*/
+@include establish-baseline;
+
+body {
+  font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+  background-color:$background-color;
+  color:$text-color;
+}
+
+a {
+  text-decoration:none;
+  color:$text-color;
+  &:hover {
+  }
+}

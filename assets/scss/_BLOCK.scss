@@ -1,0 +1,39 @@
+/**
+* Block Stylesheet: Logo
+* 
+* @project        example.com
+* @author         Matthew White <matt@substructu.re>
+* @date           YYYY-MM-DD
+* @lastmodified   YYYY-MM-DD HH:MM
+*/
+
+/**
+* Base Partial Import
+*/
+@import 'base';
+
+/**
+* Block Styling (Mobile)
+*/
+.BLOCK {
+}
+
+/**
+* Block Styling (Tablet)
+*/
+@media screen and (min-width: $width-tablet) {
+
+  .BLOCK {
+  }
+
+}
+
+/**
+* Block Styling (Desktop)
+*/
+@media screen and (min-width: $width-desktop) {
+
+  .BLOCK {
+  }
+
+}

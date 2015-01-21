@@ -1,0 +1,202 @@
+/**
+* Grid Stylesheet
+*
+* Defines all Zen Grid based layouts 
+* 
+* This stylesheet contains the default Zen Grid container layout, as well as 
+* all progressive width-based grid layouts. All blocks should be positioned
+* via this global stylesheet - NOT on their respective block stylesheets.
+* 
+* @project        example.com
+* @author         Matthew White <mwhite@digitalbungalow.com>
+* @date           2013-05-14
+* @lastmodified   2013-05-14 17:58
+*/
+
+/**
+* Base Partial Import
+*/
+@import 'base';
+
+
+/**
+* Zen Grid Settings (Mobile) 
+*/
+
+/** Variables */
+
+/** Containers */
+.header-container,
+.body-container,
+.footer-container {
+  @include zen-grid-container;
+}
+
+/** Blocks */
+.logo {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+.nav--primary {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+.nav--utility {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+.product--left, .product--middle, .product--right {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+.footer {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+.page__heading, .page__content {
+  @include zen-grid-item(1, 1);
+  @include zen-clear();
+}
+
+/**
+* Zen Grid Settings (Tablet)
+*/
+@media screen and (min-width: $width-tablet) {
+ 
+  /** Variables */ 
+  $zen-column-count: 12;
+  $zen-gutter-width: 10px;
+ 
+  /** Containers */
+  .header-container,
+  .body-container,
+  .footer-container {
+    width:95%;
+    margin:0 auto;
+  }
+
+  /** Blocks */ 
+  .logo {
+    @include zen-grid-item(4, 1);
+  }
+
+  .nav--primary {
+    @include zen-grid-item(6, 5);
+    @include zen-clear(none);
+  }
+
+  .nav--utility {
+    @include zen-grid-item(2, 1, right);
+    @include zen-clear(none);
+  }
+
+  .product--left {
+    @include zen-grid-item(7, 1);
+    @include zen-clear(none);
+    @include zen-float();
+    padding-right:20px //Gutter override
+  }
+  
+  .product--middle {
+    @include zen-grid-item(5, 1, right);
+    @include zen-clear(none);
+    @include zen-float(right);
+  } 
+  
+  .product--right {
+    @include zen-grid-item(5, 1, right);
+    @include zen-clear(right);
+    @include zen-float(right);
+  }
+  
+  .page__heading, .page__content {
+    @include zen-grid-item(8, 3);
+  }
+
+  .page--blog {
+    .page__content {
+      @include zen-grid-item(12, 1, $gutter-width:0);
+    }
+    .blog {
+      @include zen-grid-item(8, 1);
+    }
+  }
+  
+  .page--article {
+    .page__content {
+      @include zen-grid-item(12, 1, $gutter-width:0);
+    }
+    .article, .comments {
+      @include zen-grid-item(8, 1);
+      @include zen-clear();
+    }
+  }
+
+}
+
+/**
+* Zen Grid Settings (Desktop)
+*/
+@media screen and (min-width: $width-desktop) {
+ 
+  /** Variables */ 
+ 
+  /** Containers */
+  .header-container,
+  .body-container,
+  .footer-container {
+    max-width:1100px;
+  }
+
+  /** Blocks */
+  .logo {
+  }
+
+  .nav--primary {
+  }
+
+  .nav--utility {
+  }
+
+  .product--left {
+    @include zen-grid-item(4, 1);
+    padding-right:5px;
+  }
+  
+  .product--middle {
+    @include zen-grid-item(4, 5, left);
+  } 
+  
+  .product--right {
+    @include zen-grid-item(4, 9, left);
+  }
+  
+  .page__heading, .page__content {
+    @include zen-grid-item(6, 4);
+  }
+  
+  .page--blog {
+    .page__content {
+      @include zen-grid-item(8, 3);
+    }
+    .blog, .comments {
+      @include zen-grid-item(10, 1);
+      @include zen-clear();
+    }
+  }
+
+  .page--article {
+    .page__content {
+      @include zen-grid-item(8, 3);
+    }
+    .article {
+      @include zen-grid-item(10, 1);
+    }
+  }
+
+}
